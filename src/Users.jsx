@@ -55,7 +55,6 @@ function Users() {
       salary: "$205,500",
     },
 
-  ]
   return (
     <>
       <div class="d-sm-flex align-items-center justify-content-between mb-4">
