@@ -1,20 +1,34 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 
 function Userview() {
     const perams = useParams()
-    console.log(perams);
-    const [serchperamce, setserchperamce] = useSearchParams()
-    console.log(...serchperamce);
+   
+    // const [serchperamce, setserchperamce] = useSearchParams()
+    
+    const [userdata,setUserdata]=useState({})
+
+    useEffect(()=>{
+        loadUser()
+    },[])
+
+    let loadUser = async ()=>{
+        try {
+        let user = await axios.get(`https://630098ce59a8760a757cc0bc.mockapi.io/Tony/${perams.id}`)
+        setUserdata(user.data)
+        } catch (error) {
+            
+        }
+    }
     return (
         <>
-            <div>{perams.id}</div>
-            <button class="btn btn-sm btn-danger" onClick={() => {
-                setserchperamce({
-                    name: "raghul",
-                    age: 25
-                })
-            }}>Click me buddy</button>
+            <h3>{userdata.name}</h3>
+            <h3>{userdata.position}</h3>
+            <h3>{userdata.office}</h3>
+            <h3>{userdata.age}</h3>
+            <h3>{userdata.start_date}</h3>
+            <h3>{userdata.salary}</h3>
         </>
     )
 }

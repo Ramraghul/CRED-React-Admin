@@ -40,13 +40,13 @@ function Dashboard() {
     ]
     return (
         <>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="https://github.com/StartBootstrap/startbootstrap-sb-admin-2/archive/gh-pages.zip" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Download Report</a>
+        <div className="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="https://github.com/StartBootstrap/startbootstrap-sb-admin-2/archive/gh-pages.zip" className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                className="fas fa-download fa-sm text-white-50"></i> Download Report</a>
         </div>
         
-        <div class="row">
+        <div className="row">
             {
                 cardData.map((value)=>{
                     return(
@@ -55,16 +55,16 @@ function Dashboard() {
                 })
             }
         </div>
-        {/* <div class="row">
+        {/* <div className="row">
         <Dashchart1></Dashchart1>
         <Dashcard2></Dashcard2>
         </div>  */}
-        <div class="row">
-        <div class="col-lg-6 mb-4">
+        <div className="row">
+        <div className="col-lg-6 mb-4">
             <Dashcard3></Dashcard3>
             <Dashcard4></Dashcard4>
         </div>
-        <div class="col-lg-6 mb-4">
+        <div className="col-lg-6 mb-4">
             <Dashcard5></Dashcard5>
             <Dashcard6></Dashcard6>
         </div> 

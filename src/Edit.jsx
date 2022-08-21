@@ -1,8 +1,10 @@
+import axios from 'axios';
 import { useFormik } from 'formik';
-import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
-function Newuser() {
+function Edit() {
+  const params = useParams()
   const formic = useFormik({
     initialValues :{
       name:"",
@@ -13,22 +15,43 @@ function Newuser() {
       salary:""
     },
     validate:(value)=>{
-      let mark ={}
+      let error ={}
       if(value.name === ""){
-        mark.name ="Please enter the Name"
+        error.name ="Please enter the Name"
       }
 
       if(value.position === ""){
-        mark.position ="Please enter the Position"
+        error.position ="Please enter the Position"
       }
 
-      return mark;
+      return error;
     },
-    onSubmit : async (value)=>{
-     await axios.post("https://630098ce59a8760a757cc0bc.mockapi.io/Tony",value)
-     alert ("New User Created")
+    onSubmit :async(value)=>{
+     await axios.put(`https://630098ce59a8760a757cc0bc.mockapi.io/Tony/${params.id}`,value)
+     alert("User Update done")
     }
   })
+
+  useEffect (()=>{
+    loadUser()
+  },[])
+
+  let loadUser =  async()=>{
+    try {
+      let user =  await axios.get(`https://630098ce59a8760a757cc0bc.mockapi.io/Tony/${params.id}`)
+      formic.setValues({
+        name : user.data.name,
+        position : user.data.position,
+        office : user.data.office,
+        age : user.data.age,
+        start_date : user.data.start_date,
+        salary : user.data.salary
+      })
+    } catch (error) {
+      
+    }
+  }
+  
   return (
     <div className="container ">
       <form onSubmit={formic.handleSubmit}>
@@ -68,4 +91,4 @@ function Newuser() {
   )
 }
 
-export default Newuser
+export default Edit
