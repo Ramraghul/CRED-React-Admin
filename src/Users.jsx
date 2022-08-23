@@ -10,7 +10,6 @@ function Users() {
   }
   const [data,setdata]=useState([])
   const [loading,setLoading] = useState(false)
-
   useEffect(()=>{
     loadData();
   },[])
@@ -76,13 +75,13 @@ let Delete = async(id)=>{
                         return(
                           <>
                           <tr key={index}>
-                          <th>{index+1}</th>
-                          <th>{API.name}</th>
-                          <th>{API.position}</th>
-                          <th>{API.office}</th>
-                          <th>{API.age}</th>
-                          <th>{API.start_date}</th>
-                          <th>{API.salary}</th>
+                          <td>{index+1}</td>
+                          <td>{API.name}</td>
+                          <td>{API.position}</td>
+                          <td>{API.office}</td>
+                          <td>{API.age}</td>
+                          <td>{API.start_date}</td>
+                          <td>{API.salary}</td>
                           <th>
                           
                             <Link to={`${API.id}`} className="btn btn-sm btn-primary mr-2">View</Link>
