@@ -52,12 +52,7 @@ function NavBar() {
 
                         {/* <!-- Nav Item - Alerts --> */}
                         <li className="nav-item dropdown no-arrow mx-1">
-                            <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="fas fa-bell fa-fw"></i>
-                                {/* <!-- Counter - Alerts --> */}
-                                <span className="badge badge-danger badge-counter">3+</span>
-                            </a>
+                            
                             {/* <!-- Dropdown - Alerts --> */}
                             <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="alertsDropdown">
@@ -103,13 +98,7 @@ function NavBar() {
 
                         {/* <!-- Nav Item - Messages --> */}
                         <li className="nav-item dropdown no-arrow mx-1">
-                            <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="fas fa-envelope fa-fw"></i>
-                                {/* <!-- Counter - Messages --> */}
-                                <span className="badge badge-danger badge-counter">7</span>
-                            </a>
-                            {/* <!-- Dropdown - Messages --> */}
+                           
                             <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="messagesDropdown">
                                 <h6 className="dropdown-header">

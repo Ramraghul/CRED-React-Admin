@@ -49,7 +49,8 @@ function Product() {
         <button onClick={() => { CreateProduct() }} className="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
           className="fas fa-download fa-sm text-white-50"></i> Create Product</button>
       </div>
-      <div className="row">
+      {
+        loading ? <span>Loading...</span> : <div className="row">
         <div className="card shadow mb-4">
           <div className="card-header py-2">
             <h6 className="m-0 font-weight-bold text-primary">Product Tables</h6>
@@ -107,6 +108,7 @@ function Product() {
           </div>
         </div>
       </div>
+      }
     </>
   )
 }
